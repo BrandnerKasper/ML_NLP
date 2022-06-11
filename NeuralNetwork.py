@@ -31,7 +31,7 @@ class NeuralNetwork:
             -> tuple[ndarray, list[ndarray], list[ndarray]]:
         # input_gradient, weight_gradients, bias_gradients
         w_grads, b_grads = [], []
-        # last layer does not have an activation function so we need to append a None element
+        # last layer does not have an activation function, so we need to append a None element
         for layer, activation, layer_input, activation_input in \
                 zip_longest(reversed(self.layers), reversed(self.activations + [None]),
                             reversed(self.layer_inputs), reversed(self.activation_inputs + [None])):

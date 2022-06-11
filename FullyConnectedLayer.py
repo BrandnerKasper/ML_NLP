@@ -9,7 +9,7 @@ class FullyConnectedLayer:
     def __init__(self, input_size: int, output_size: int):
         self.input_size = input_size
         self.output_size = output_size
-
+        # weights should be normally distributed or have a random distribution btw. [-1, 1]
         self.weights = np.random.randn(self.input_size, self.output_size)
         self.bias = np.zeros((1, self.output_size))
 

@@ -14,7 +14,7 @@ def main():
 
     # Init Layers
     fc_1 = FullyConnectedLayer(input_size, hidden_size)
-    # Weights v
+    # Weights v -> we set weights manually according to the example
     v = np.array([[0.5, 0.75],
                   [0.25, 0.25]])
     fc_1.weights = v
