@@ -12,4 +12,4 @@ class MeanSquaredError:
 
     def backward(self, y_pred: np.array, y_true: np.array, grad: np.array = np.array([[1]]))\
             -> np.array:
-        pass
+        return grad * (y_pred - y_true)

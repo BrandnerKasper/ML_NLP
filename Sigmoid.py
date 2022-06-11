@@ -12,4 +12,4 @@ class Sigmoid:
 
     def backward(self, x: np.array, grad: np.array = np.array([[1]]))\
             -> np.array:
-        pass
+        return grad * self.forward(x) * (1 - self.forward(x))

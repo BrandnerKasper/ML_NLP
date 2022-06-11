@@ -43,6 +43,13 @@ def main():
     print(f"Prediction: {pred}")
     print(f"Loss: {loss}")
 
+    # Backward Pass
+    grad = loss_fct.backward(pred, y)
+    grad, w_grads, b_grads = net.backward(grad)
+
+    print(f"Gradients of the first layer: W1: {w_grads[0]}, b1: {b_grads[0]}")
+    print(f"Gradients of the second layer: W2: {w_grads[1]}, b2 {b_grads[1]}")
+
 
 if __name__ == '__main__':
     main()
