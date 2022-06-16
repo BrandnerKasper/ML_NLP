@@ -1,10 +1,10 @@
-from typing import Tuple
-
 import numpy as np
 from numpy import ndarray
 
+from Layers.Layer import Layer
 
-class FullyConnectedLayer:
+
+class FullyConnectedLayer(Layer):
 
     def __init__(self, input_size: int, output_size: int):
         self.input_size = input_size

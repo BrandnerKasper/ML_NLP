@@ -1,9 +1,9 @@
 import numpy as np
 
-from FullyConnectedLayer import FullyConnectedLayer
+from Layers.FullyConnectedLayer import FullyConnectedLayer
 from MeanSquaredError import MeanSquaredError
 from NeuralNetwork import NeuralNetwork
-from Sigmoid import Sigmoid
+from Layers.Sigmoid import Sigmoid
 
 
 def main():
@@ -25,7 +25,7 @@ def main():
     fc_2.weights = w
 
     # Network Init
-    net = NeuralNetwork([fc_1, fc_2], [sigmoid_1])
+    net = NeuralNetwork([fc_1, sigmoid_1, fc_2])
 
     # Loss
     loss_fct = MeanSquaredError()
@@ -47,8 +47,8 @@ def main():
     grad = loss_fct.backward(pred, y)
     grad, w_grads, b_grads = net.backward(grad)
 
-    print(f"Gradients of the first layer: W1: {w_grads[0]}, b1: {b_grads[0]}")
-    print(f"Gradients of the second layer: W2: {w_grads[1]}, b2 {b_grads[1]}")
+    print(f"Gradients of the first fcn layer: W1: {w_grads[0]}, b1: {b_grads[0]}")
+    print(f"Gradients of the second fcn layer: W2: {w_grads[1]}, b2 {b_grads[1]}")
 
 
 if __name__ == '__main__':
