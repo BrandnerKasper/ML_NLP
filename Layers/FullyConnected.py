@@ -4,7 +4,7 @@ from numpy import ndarray
 from Layers.Layer import Layer
 
 
-class FullyConnectedLayer(Layer):
+class FullyConnected(Layer):
 
     def __init__(self, input_size: int, output_size: int):
         self.input_size = input_size
