@@ -14,7 +14,6 @@ class Dropout(Layer):
             -> np.array:
         # We scale up while training! (See Chapter 3 p.70)
         self.mask = np.random.binomial(1, self.p, size=x.shape) / self.p
-        print(self.mask)
         return x * self.mask
 
     def backward(self, x: np.array, grad: np.array) \
